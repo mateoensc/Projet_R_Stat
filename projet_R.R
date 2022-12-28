@@ -7,19 +7,6 @@ require(PCAmixdata)
 # Une première visualisation des variables quantitatives
 # Tableau statistique des variables 
 
-summary(donneesProjet$Age)
-summary(donneesProjet$Weight)
-summary(donneesProjet$Height)
-summary(donneesProjet$Neck)
-summary(donneesProjet$Chest)
-summary(donneesProjet$Abdomen)
-summary(donneesProjet$Hip)
-summary(donneesProjet$Thigh)
-summary(donneesProjet$Knee)
-summary(donneesProjet$Ankle)
-summary(donneesProjet$Bicep)
-summary(donneesProjet$Forearm)
-summary(donneesProjet$Wrist)
 summarydb <- data.frame();
 for (var in 1:14){
   name <- colnames(donneesProjet[var])
@@ -70,7 +57,4 @@ boxplot(donneesProjet$Wrist,xlab="Wrist")
 
 
 ##### 
-plot(donneesProjet[,1:14])
-plot(donneesProjet[,1:2])
-hist(donneesProjet$Age)
-hist(donneesProjet$Weight)
+
