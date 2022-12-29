@@ -37,3 +37,6 @@ round(res$ind$cos2,digit=3) # uniquement les cosinus carres
 res$quanti # permet d’afficher l’ensemble des sorties numeriques associees aux variables :
 # coordonnees, contributions, cosinus carres
 round(res$quanti$cos2,digit=3) # uniquement les cosinus carres
+# Confirme que les variables sont corrélées
+# Variable âge intéressante ??
+# Y peut-être reconstruit ??

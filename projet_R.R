@@ -1,8 +1,6 @@
 data <- load("donneesProjet2A.RData")
 summary(donneesProjet)
-# install.packages("PCAmixdata")
-require(PCAmixdata)
-#help(PCAmix)
+
 ##
 # Une première visualisation des variables quantitatives
 # Tableau statistique des variables 
@@ -11,7 +9,7 @@ summarydb <- data.frame();
 for (var in 1:14){
   name <- colnames(donneesProjet[var])
   summary <-  array(summary(donneesProjet[[var]]))
-  var_sd <- data.frame(Variance = var(donneesProjet[[var]]),ecart_type = sd(donneesProjet[[var]]))
+  var_sd <- data.frame(Coeffvariation = (sd(donneesProjet[[var]])/mean(donneesProjet[[var]]))*100,ecart_type = sd(donneesProjet[[var]]))
   summary <- data.frame(Min = summary[1],FirstQuarter = summary[2],Median = summary[3],Mean = summary[4], ThirdQuarter = summary[5],Max = summary[6])
   ans <- data.frame(name,summary,var_sd)
   summarydb <- rbind(summarydb,ans)
