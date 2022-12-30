@@ -1,11 +1,17 @@
 # install.packages("PCAmixdata")
 require(PCAmixdata)
+# Chargement du package corrplot
+library(corrplot)
+
 #help(PCAmix)
+# Matrice des corrélations
+Matricecor <- cor(donneesProjet[,2:14])
+# Graphique de la matrice des corrélations
+corrplot(Matricecor,type="upper", order="hclust",tl.col = "black",tl.srt = 45)
 #----------------------------------------
 # Mise en oeuvre de l’ACP
 #----------------------------------------
 # On enlève la variable à expliquer PctBf
-
 res <- PCAmix(donneesProjet[,2:14], graph = FALSE)
 res
 round(res$eig,digit=2) # permet d’afficher les valeurs propres et les pourcentages
@@ -40,3 +46,9 @@ round(res$quanti$cos2,digit=3) # uniquement les cosinus carres
 # Confirme que les variables sont corrélées
 # Variable âge intéressante ??
 # Y peut-être reconstruit ??
+y = donneesProjet[,1]
+
+test = lm(y~donneesProjet[,3])
+summary(test)
+test2 = lm(y~donneesProjet[,3]+donneesProjet[,8])
+summary(test2)
