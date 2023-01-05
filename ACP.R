@@ -1,9 +1,9 @@
-# install.packages("PCAmixdata")
+
 require(PCAmixdata)
 # Chargement du package corrplot
 library(corrplot)
 
-#help(PCAmix)
+
 # Matrice des corrélations
 Matricecor <- cor(donneesProjet[,2:14])
 # Graphique de la matrice des corrélations
@@ -30,12 +30,12 @@ abline(h=1,col=2,lwd=2)
 plot(res,axes=c(1,2),choice="ind", label = TRUE) # on retrouve ici le graphique des individus (plan 1-2)
 plot(res,axes=c(1,2),choice="cor") # on retrouve ici le cercle des corrélations
 # des variables (plan 1-2)
-plot(res,axes=c(1,3),choice="ind", label = TRUE)
-plot(res,axes=c(1,3),choice="cor", label = TRUE)
+plot(res,axes=c(2,3),choice="ind", label = TRUE)
+plot(res,axes=c(2,3),choice="cor", label = TRUE)
 plot(res,axes=c(1,2),choice="sqload") # on retrouve ici le graphique des "square loadings" (plan 1-2)
 
 #--------------------------------------------------------------------
-# Sorties numeriques pour les individus et es variables
+# Sorties numeriques pour les individus et les variables
 #--------------------------------------------------------------------
 res$ind # permet d’afficher l’ensemble des sorties numeriques associees aux individus :
 # coordonnees, contributions, cosinus carres
@@ -46,9 +46,3 @@ round(res$quanti$cos2,digit=3) # uniquement les cosinus carres
 # Confirme que les variables sont corrélées
 # Variable âge intéressante ??
 # Y peut-être reconstruit ??
-y = donneesProjet[,1]
-
-test = lm(y~donneesProjet[,3])
-summary(test)
-test2 = lm(y~donneesProjet[,3]+donneesProjet[,8])
-summary(test2)

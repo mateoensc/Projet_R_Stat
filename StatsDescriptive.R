@@ -1,4 +1,5 @@
-data <- load("donneesProjet2A.RData")
+# Run previously Dataandpackages.R
+
 summary(donneesProjet)
 
 ##
